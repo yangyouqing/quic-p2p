@@ -1,0 +1,17 @@
+# Signaling server config example.
+# Copy to config.yaml or set env: SIGNALING_HTTP_ADDR, SIGNALING_TCP_ADDR, etc.
+
+server:
+  http_addr: ":8080"   # WebSocket + /health, /ready
+  tcp_addr: ":8888"    # TCP for C client/peer
+
+room:
+  max_peers_per_room: 2
+  idle_timeout: 0      # 0 = no auto-expire (e.g. 5m for 5 minutes)
+
+limits:
+  max_message_size: 65536
+  max_connections: 0   # 0 = unlimited
+  room_id_max_length: 256
+
+log_level: info
